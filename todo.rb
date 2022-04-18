@@ -41,6 +41,13 @@ post '/lists' do
   end
 end
 
+get '/lists/:id' do
+  @id = params[:id].to_i
+  @list = session[:lists][@id]
+
+  erb :list
+end
+
 # Retrun an error message if the name is invalid. Return ill if name is valid.
 def error_for_list_name(name)
   if !(1..100).cover? name.size

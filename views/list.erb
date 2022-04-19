@@ -30,4 +30,6 @@
   </fieldset>
 </form>
 
-<a href="/lists">All Lists</a>
+<% content_for :header_links do %>
+  <a class="list" href="/lists">All Lists</a>
+<% end %>
